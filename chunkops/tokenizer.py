@@ -30,6 +30,10 @@ def count_tokens(text: str, model: str = "gpt-4") -> int:
     """
     if not text:
         return 0
+    # Treat whitespace-only as empty. tiktoken may count whitespace as tokens,
+    # but for chunking we want empty/whitespace passages to cost 0 tokens.
+    if not text.strip():
+        return 0
     if _HAS_TIKTOKEN:
         enc = _get_encoding(model)
         return len(enc.encode(text))
