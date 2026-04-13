@@ -3,8 +3,8 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "chunkops"
-version = "0.1.0"
+name = "llm-chunk-optimizer"
+version = "0.1.1"
 description = "Semantic-aware chunking with provenance tracking for production RAG and LLM data pipelines"
 readme = "README.md"
 license = { text = "MIT" }

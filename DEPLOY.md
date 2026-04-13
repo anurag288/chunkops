@@ -110,7 +110,7 @@ python -m build
 # Upload to TestPyPI first (safe test)
 twine upload --repository testpypi dist/*
 # Install from TestPyPI to verify:
-pip install --index-url https://test.pypi.org/simple/ chunkops
+pip install --index-url https://test.pypi.org/simple/ llm-chunk-optimizer
 
 # Upload to real PyPI
 twine upload dist/*
@@ -119,8 +119,8 @@ twine upload dist/*
 ### After publishing
 
 ```bash
-pip install chunkops
-pip install "chunkops[semantic]"
+pip install llm-chunk-optimizer
+pip install "llm-chunk-optimizer[semantic]"
 ```
 
 ---
