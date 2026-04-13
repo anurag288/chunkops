@@ -24,16 +24,22 @@ Every RAG system reinvents chunking from scratch. Existing tools (LangChain spli
 
 ```bash
 # Core — fixed, recursive, structural strategies + provenance + benchmark
-pip install chunkops
+pip install llm-chunk-optimizer
 
 # Add semantic chunking (embedding-based topic boundaries)
-pip install "chunkops[semantic]"
+pip install "llm-chunk-optimizer[semantic]"
 
 # Everything + dev/test tools
-pip install "chunkops[dev]"
+pip install "llm-chunk-optimizer[dev]"
 ```
 
+### Import name vs install name
+
+- Install name: `llm-chunk-optimizer`
+- Import name: `chunkops`
+
 ### Dependencies
+
 
 | Package | When required | Why |
 |---------|---------------|-----|

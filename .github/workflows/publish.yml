@@ -1,9 +1,10 @@
-name: Publish to TestPyPI
+name: Publish to TestPyPI / PyPI
 
 on:
   push:
     branches:
       - testpypi
+      - pypi
 
 jobs:
   build-test-and-publish:
@@ -32,8 +33,17 @@ jobs:
           twine check dist/*
 
       - name: Publish to TestPyPI
+        if: github.ref == 'refs/heads/testpypi'
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
           twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+      - name: Publish to PyPI
+        if: github.ref == 'refs/heads/pypi'
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          twine upload dist/*
