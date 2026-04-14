@@ -3,7 +3,7 @@
 **Semantic-aware chunking with provenance tracking for production RAG and LLM data pipelines.**
 
 ```
-pip install chunkops
+pip install llm-chunk-optimizer
 ```
 
 ---

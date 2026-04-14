@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llm-chunk-optimizer"
-version = "0.1.1"
+version = "0.1.2"
 description = "Semantic-aware chunking with provenance tracking for production RAG and LLM data pipelines"
 readme = "README.md"
 license = { text = "MIT" }
